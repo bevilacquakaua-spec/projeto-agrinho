@@ -14,23 +14,3 @@ document.querySelectorAll('nav a').forEach(link => {
         });
     });
 });
-
-// Animação dos cards ao aparecerem na tela
-const cards = document.querySelectorAll('.card');
-
-const observador = new IntersectionObserver((entradas) => {
-    entradas.forEach(entrada => {
-        if (entrada.isIntersecting) {
-            entrada.target.style.opacity = "1";
-            entrada.target.style.transform = "translateY(0)";
-        }
-    });
-});
-
-cards.forEach(card => {
-    card.style.opacity = "0";
-    card.style.transform = "translateY(50px)";
-    card.style.transition = "all 0.8s ease";
-
-    observador.observe(card);
-});
